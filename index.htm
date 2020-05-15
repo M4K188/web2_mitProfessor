@@ -1,0 +1,268 @@
+-<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title>FilmForum - Startseite </title>
+	<meta	charset="UTF-8">
+	<link rel="stylesheet" href="styles.css">
+	<meta name="description" content="Movie Forum and Reviews">
+	<meta name="keywords" content="HTML,CSS,XML,JavaScript">
+	<meta name="author" content="Ibrahim Soueid">
+	<meta name="viewport" content="width=device-width" initial-scale="1">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<link href="http://allfont.de/allfont.css?fonts=comic-sans-ms" rel="stylesheet" type="text/css" />
+	<script language="javascript" type="text/javascript"> src="funktion.js"</script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+<div class="fixedheader">
+			<ul>
+				<li><a class="loginformclick" href="#" onclick="showLoginForm()">Anmelden oder Registrieren</a></li>
+				<li class="search-icon">
+					<input type="search" placeholder="Search..." name="search">
+					<label class="icon">
+						<span class="fas fa-search"></span>
+					</label>
+				</li>
+			</ul>
+</div>
+<script src="funktion.js">
+
+
+</script>
+
+<div class="mainheader">
+	<h1>FilmForum</h1>
+</div>
+	<nav>
+		<ul>
+			<li class="btn"><span class="fas fa-bars"></span></li>
+			<div class="items">
+				<li><a id="lihome" href="#">Home</a></li>
+				<li class="forum"><a href="#">Forum</a>
+					<ul>
+						<li><a href="#">Unterforen</a></li><hr>
+						<li><a href="#">Forum eröffnen</a></li>
+					</ul>
+				</li>
+				<li class="review"><a href="#">Reviews</a>
+					<ul>
+						<li><a href="#">Letzte Reviews</a></li>
+						<li><a href="#">Beliebte Reviews</a></li><hr>
+						<li><a href="#">Review schreiben</a></li>
+					</ul>
+				</li>
+				<li><a  href="#">News</a></li>
+			</div>	
+		</ul>
+	</nav>
+	<div class="wrapper">
+		<div id="loginDiv" class="contact-form animate">
+			<h2>LOGIN</h2>
+			<form action="">
+				<div class="imgcontainer">
+					<span onclick="closeLoginForm()" class="close" title="Close Modal">&times;</span>
+				</div>
+				<p>Email</p>
+				<input type="email" placeholder="Mail angeben">
+				<p>Passwort</p>
+				<input type="password" placeholder="Passwort eingeben">
+				<input type="submit" value="Anmelden"><p><input type="checkbox"> Remember Me</p>
+			</form>
+			<div class="loginfooter">
+				<div>
+					Keinen Account?<a href="#">Hier Registrieren</a>
+				</div>
+				<div>
+					<a href="#">Passwort vergessen?</a>
+				</div>
+			</div>
+		</div> 
+	</div>	
+
+<div class="row">
+	<div class="column right">
+		<h3 id="newsheadline">News</h3>
+		<hr>
+		<div class="news">
+			<div class="imgBx">
+				<img src="C:\Users\ISoue\Desktop\Web2-Übung\JamesBond.jpg" alt="Bild von Daniel Craig als JB">
+			</div>
+			<div class=content>
+					<p> James Bond ist auf den 21.11.2020 verschoben worden</p>
+			</div>
+		</div>
+		<hr>
+		<div class="news">
+			<div class="imgBx">
+				<img src="C:\Users\ISoue\Desktop\Web2-Übung\MissionImpossible7.jpg" alt="EIn Bild vom MI- Team">
+			</div>
+			<div class=content>
+					<p> Mission Impossible 7 erscheint im Jahr 2022 in die Kinos</p>
+			</div>
+		</div>
+		<hr>
+	</div>
+
+	<div class="column middle">
+		<div id="tablediv">
+			<div>
+				<table>
+					<tr class="categories">
+						<th onclick="showlastbeiträge()">Letzte Beiträge</th>
+						<th onclick="showbeliebteBeiträge()">Beliebte Beiträge</th>
+						<th onclick="showOhneAntworten()">Ohne Antwort</th>
+					</tr>
+				</table>		
+			</div>
+			<table id="letzteBeiträge" class="last">
+				<tr id="tablefilter">	
+					<th class="tdthemaa">Thema</th>
+					<th class="date">Datum</th>
+					<th>Letzter Beitrag</th> 
+					<th>Unterforum</th>
+				</tr>
+				<tr>
+					<td class="tdthema";>James Bond oder Mission Impossible,Ethan Bond</td>
+					<td class="date">10.05.2020</td>
+					<td>22.04.2029,<a href="#">Ethan Hunt Lover</a></td>
+					<td>Spionage-Agenten</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Filmverschiebungen wegen Corona,Mark Forster</td>
+					<td class="date">20.03.2020</td>
+					<td>23.04.2020, <a href="#">Stefan Raab</a></td>
+					<td>Corona</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Bester Regisseur im Moment, Lola</td>
+					<td class="date">20.02.2020</td>
+					<td>23.04.2020,<a href="#">Markos</a></td>
+					<td>Regisseure</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Bester Schauspieler im Moment</td>
+					<td class="date">20.01.2020</td>
+					<td>23.04.2020,<a href="#">Ethan Hunt Lover</a></td>
+					<td>Schauspieler</td>
+				</tr>
+			</table>		
+			<table id="beliebt" id="beliebt">
+				<tr id="tablefilter">	
+					<th class="tdthemaa">Thema</th>
+					<th class="date">Datum</th>
+					<th>Letzter Beitrag</th> 
+					<th>Unterforum</th>
+				</tr>
+				<tr>
+					<td class="tdthema";>Beste Serie auf Netflix, Conan </td>
+					<td class="date">10.05.2020</td>
+					<td>22.04.2018,<a href="#">Ethan Hunt Lover</a></td>
+					<td>Netflix</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Schlechteste Serie auf Netflix</td>
+					<td class="date">20.03.2020</td>
+					<td>01.01.2020, <a href="#">Stefan Raab</a></td>
+					<td>Netflix</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Netflix oder AMazon Produktionen?</td>
+					<td class="date">20.02.2020</td>
+					<td>23.04.2020,<a href="#">Markos</a></td>
+					<td>Streamingdienste</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Michael Bay gut oder schlecht?</td>
+					<td class="date">20.01.2020</td>
+					<td>23.04.2020,<a href="#">Ethan Hunt Lover</a></td>
+					<td>Regisseure</td>
+				</tr>
+
+			</table>		
+			<table id="ohneant" id="ohneant">
+				<tr id="tablefilter">	
+					<th class="tdthemaa">Thema</th>
+					<th class="date">Datum</th>
+					<th>Letzter Beitrag</th> 
+					<th>Unterforum</th>
+				</tr>
+				<tr>
+					<td class="tdthema";>Bester Avenger,Kcochctih </td>
+					<td class="date">10.05.2020</td>
+					<td class="nobeitrag">/</td>
+					<td>Superhelden Marvel</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>ISt Margot Robbie hübscher als Angelina J.?</td>
+					<td class="date">20.03.2020</td>
+					<td class="nobeitrag">/</td>
+					<td>Hotness in Hollywood</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Syd Fields Unterricht, Nalon</td>
+					<td class="date">20.02.2020</td>
+					<td class="nobeitrag">/</td>
+					<td>Syd Field</td>
+				</tr>
+				<tr>
+					<td class="tdthema";>Bester Schauspieler in den 60er,Yelnast</td>
+					<td class="date">20.01.2020</td>
+					<td class="nobeitrag">/</td>
+					<td>Schauspieler</td>
+				</tr>
+			</table>	
+		</div>
+		<h3>Letzte Reviews</h3> 
+		<hr>
+		<div class="reviews">
+			<div class="imgBx">
+				<img src="C:\Users\ISoue\Desktop\Web2-Übung\Parasite_Cover.jpg" alt="The Cover of the movie 'Parasite' by Bong Joon Ho">
+			</div>
+			<div class=content>
+				<h4>Review zu Parasite (2019) <span><a href="#">von Ibrahim Soueid</a></span></h4>
+				<div>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+				</div>
+				<p>Ein weiteres Meisterwerk von Bong- Joon Ho</p>
+				
+			</div>
+		</div>
+		<hr>
+		<div class="reviews">
+			<div class="imgBx">
+				<img src="C:\Users\ISoue\Desktop\Web2-Übung\Arrival_Film.jpg" alt="The Cover of the movie 'Arrival' by Denis Villeneuve">
+			</div>
+			<div class=content>
+				<h4>Review zu Arrival (2016) <span><a href="#">von Ibrahim Soueid</a></span></h4>				
+				<div>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star checked"></span>
+					<span class="fa fa-star "></span>
+				</div>
+				<p>Eine unglaublich bewegende Geschichte </p>
+			</div>
+		</div>
+		<hr>
+	</div>
+	<div class="column left">
+
+	</div>
+</div>
+
+<footer>	
+		<p>copyright 2020</p>
+		<ul class="footerul">
+			<li><a href="#">Kontakt</a></li> |
+			<li><a href="#">Impressum</a></li> |
+			<li><a href="#">Datenschutz</a></li>
+		</ul> 
+</footer>
+
+</body>
+</html>
