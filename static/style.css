@@ -1,0 +1,313 @@
+html{
+    background-color: #D3D3D3;
+    font-family: arial;
+}
+.header {
+  color: white;
+  background-color: lightyellow;
+  border:  2px solid black;
+  padding: 15px;
+ background-image: url("/Users/almedinredzepagik/Desktop/akiweb2/holz.jpeg");
+}
+.beides{
+    text-align : right;
+}
+.suchleiste{
+   width: 150px;
+   
+}
+.searchButton{
+    width : 50px;
+    height: 25px;
+}
+.unterheader{
+    background-color: 	#CD853F;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    padding: 15px;
+
+}
+
+.forum{
+    float: left;
+    padding: 10px;
+    position: absolute;
+    left: 1em;
+    top: 9em;
+
+}
+.regi{
+    float: left;
+    padding: 10px;
+    position: absolute;
+    right: 1em;
+    top: 9em;
+    left: 75em;
+
+}
+.re{
+    margin-right: 10px;
+}
+.fo:hover{
+    background: #E0E0E0;
+}
+.re:hover{
+    background: #E0E0E0;
+}
+.an:hover{
+    background: #E0E0E0;
+}
+.großespalte{
+    width: 99,9%;
+    height: 600px;
+    padding: 2px;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left: 2px solid black;
+    background-color: 	#FFF5EE;
+}
+.linkeseite{
+    float: left;
+    width: 54%;
+    height: 575px;
+    background-color: #D2B48C;
+
+    border: 1px solid black;
+}
+.rechteseite{
+    float: right;
+    width: 40%;
+    height: 575px;
+    background-color:#D2B48C;
+
+    border: 1px solid black;
+
+}
+.inhaltboden{
+   float: left;
+    margin-top: 4px;
+}
+.hi{
+    margin-left: 120px;
+    margin-right: 230px;
+}
+.imp{
+    margin-right: 230px;
+}
+.nu{
+    margin-right: 230px;
+}
+h2{
+    margin-left: 63px;
+}
+.hi:hover{
+    background: #E0E0E0;
+ }
+.imp:hover{
+    background: #E0E0E0;
+}
+.nu:hover{
+    background: #E0E0E0;
+}
+.da:hover{
+    background: #E0E0E0;
+}
+.erst{
+    float: left;
+    margin-top: 15px;
+    text-align: center;
+}
+.zwei{
+    margin-top: 15px;
+}
+.drei{
+    margin-top: 15px;
+}
+.vier{
+    margin-top: 15px;
+}
+.fuenf{
+    margin-top: 15px;
+}
+.sechs{
+    margin-top: 15px;
+}
+.siebn{
+    margin-top: 15px;
+}
+.e1{
+    position: absolute;
+    padding-left: 15px;
+    top: 17em;
+}
+.e2{
+    position: absolute;
+    padding-left: 15px;
+    top: 21em;
+}
+.e3{
+    position: absolute;
+    padding-left: 15px;
+    top: 25.5em;
+}
+.e4{
+    position: absolute;
+    padding-left: 15px;
+    top: 30em;
+}
+.e5{
+    position: absolute;
+    padding-left: 15px;
+    top: 34.5em;
+}
+.e6{
+    position: absolute;
+    padding-left: 15px;
+    top: 38.5em;
+}
+.e7{
+    position: absolute;
+    padding-left: 15px;
+    top: 43em;
+}
+.e1:hover{
+    text-decoration: underline;
+}
+.e2:hover{
+    text-decoration: underline;
+}
+.e3:hover{
+    text-decoration: underline;
+}
+.e4:hover{
+    text-decoration: underline;
+}
+.e5:hover{
+    text-decoration: underline;
+}
+.e6:hover{
+    text-decoration: underline;
+}
+.e7:hover{
+    text-decoration: underline;
+}
+.tb1{
+    height: 63px;
+    border-bottom: 1px solid black ;
+
+}
+.tb2{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb3{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb4{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb5{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb6{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb7{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+.tb8{
+    height: 63px;
+    border-bottom: 1px solid black ;
+}
+h4{
+    margin-top: 8px;
+
+}
+h4:hover{
+    text-decoration: underline;
+}
+.b1{
+    margin-left: 35em;
+}
+.b2{
+    margin-left: 35em;
+}
+.b3{
+     margin-left: 35em;
+ }
+.b4{
+    margin-left: 35em;
+}
+.b5{
+    margin-left: 35em;
+}
+.b6{
+    margin-left: 35em;
+}
+.b7{
+    margin-left: 35em;
+}
+.b8{
+    margin-left: 35em;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 8px 16px;
+    z-index:10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.test{
+    float: left;
+}
+.an{
+    text-decoration: none;
+    color: black;
+}
+.container {
+    margin:50px auto;
+
+    width:400px;
+    height: 450px;
+    padding-top:50px;
+    text-align: center;
+    background-color: rgba(69, 38, 38, 0.6);
+    border-radius:10px;
+}
+.btt {
+    width:150px;
+    height: 50px;
+    font-size:18px;
+    background-color:#000;
+    color:#fff;
+    border:#fff solid 1px;
+}
+.btt:hover {
+    background-color:#fff;
+    color:#000;
+    cursor: pointer;
+}
+input[type="text"], input[type="password"] {
+    width: 300px;
+    height: 50px;
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left:5px;
+}
