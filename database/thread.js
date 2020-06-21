@@ -54,7 +54,7 @@ function getMessageOfThread(threadId){
   })
 }
 
-
+//TODO... Delete all messages in Thread
 function deleteThread(threadId){
   return database.ThreadModel.deleteOne({ id: threadId })
   .then(function (content, err) {
@@ -64,10 +64,11 @@ function deleteThread(threadId){
 }
 
 
-function createThread(title){
+function createThread(title, userName){
   var newThread = new database.ThreadModel({
       headline: title,
       messageList: [],
+      creator: userName,
       id: uuidv4()
   })
   return newThread.save()

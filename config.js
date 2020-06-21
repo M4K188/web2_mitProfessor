@@ -4,7 +4,10 @@ config = {
   databasePassword : "user",
   serverPort : 5000,
   adminPW: "admin",
-  adminEmail: "admin@admin.com"
+  adminEmail: "admin@admin.com",
+  certifacateIssuer  : 'Almedin Redzepagik',
+  certifacateSubject  : 's67461@beuth-hochschule.de',
+  certifacateAudience  : 'https://www.beuth-hochschule.de/'
 
 }
 

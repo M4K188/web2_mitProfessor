@@ -32,7 +32,8 @@ var MessageModel = mongoose.model('MessageModel', MessageSchema )
 var ThreadSchema  = new Schema({
 	headline: String,
   messageList: [],
-  id: String
+  id: String,
+	creator: String
   });
 
 const handleError = function(err) {

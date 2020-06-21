@@ -8,23 +8,18 @@ const database = require('./database')
 
 
 
-async function isLoginValid(userName, passWord){
+async function isPassWordValid(userName, passWord){
   const hashedPassword = await new Promise((resolve, reject) => {
       bcrypt.hash(passWord, saltRounds, function(err, hash) {
           if (err) reject(err)
           resolve(hash)
     })
   })
-  return  database.UserModel.findOne({'username': userName},'username hashedPassword')
+  return database.UserModel.findOne({'username': userName},'username hashedPassword')
   .then(
       function (content, err) {
           return bcrypt.compareSync(passWord, content.hashedPassword)
       })
-}
-
-
-function logout(userName){
-
 }
 
 
@@ -92,5 +87,5 @@ function isUserExisting(userName){
 
 exports.isUserExisting = isUserExisting
 exports.isAdmin = isAdmin
-exports.isLoginValid = isLoginValid
+exports.isPassWordValid = isPassWordValid
 exports.createUser = createUser

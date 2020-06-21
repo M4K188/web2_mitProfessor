@@ -28,7 +28,7 @@ function createMessage(creatorUserName, content, threadID){
 }
 
 
-
+//TODO delete from thread as well
 function deleteMessage(messageId){
     return database.MessageModel.deleteOne({ id: messageId }, function (err) {
         if (err) return handleError(err);

@@ -6,17 +6,26 @@ const thread_db = require('../database/thread')
 
 
 
-function isPermissionGrantedForMessage(messageId, userId){
+function isPermissionGrantedForMessage(messageId, userName){
+  if (userName === "admin"){
+    return true
+  }
+     return true
+}
+
+
+function isPermissionGrantedForThread(threadId, userName){
+  if (userName === "admin"){
+    return true
+  }
     return true
 }
 
 
-function isPermissionGrantedForThread(messageId, userId){
+function isPermissionGrantedForUserChange(messageId, userName){
+  if (userName === "admin"){
     return true
-}
-
-
-function isPermissionGrantedForUserUpdate(messageId, userId){
+  }
     return true
 }
 
