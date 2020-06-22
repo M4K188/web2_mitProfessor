@@ -29,6 +29,7 @@ var privateKey  = fs.readFileSync('sslcert/server.key', 'utf8');
 var certificate = fs.readFileSync('sslcert/server.crt', 'utf8');
 var passPhrase = "abcd"
 
+server.listen(443, () => { console.log('listening on 443') });
 
 var credentials = {key: privateKey, cert: certificate, passphrase: passPhrase}
 
