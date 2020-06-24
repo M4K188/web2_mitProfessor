@@ -4,11 +4,21 @@ const permission_service = require('../permission/authorisationService')
 const requestHelpers = require('./requestHelpers')
 
 
-user_api.get('/:userId', function(request,response){
-  let userId = request.params.userId
-  console.log(userId)
-  response.json({ userId: userId})
-  response.end()
+user_api.get('/:userId', async function(request,response){
+  if (!requestHelpers.checkValidParameters(["userId"], request.params,response)){
+    return
+  }  else {
+    let userId = request.params.userId
+    if (await isUserExisting(userId){
+      console.log(userId)
+      response.json({ userId: userId})
+      response.end()
+    }
+    else{
+      response.status(404).send({ error: 'User not exists' })
+      response.end()
+    }
+  }
 })
 
 
@@ -16,11 +26,19 @@ user_api.delete('/:userId', function(request,response){
   if (!requestHelpers.checkValidLogin(request,response)){
     return
   }
-  else {
+  else if (!requestHelpers.checkValidParameters(["userId"], request.params,response)){
+    return
+  }  else {
     let userId = request.params.userId
-    console.log(userId)
-    response.send("OK")
-    response.end()
+    if (await isUserExisting(userId){
+      console.log(userId)
+      response.json({ userId: userId})
+      response.end()
+    }
+    else{
+      response.status(404).send({ error: 'User not exists' })
+      response.end()
+    }
   }
 })
 

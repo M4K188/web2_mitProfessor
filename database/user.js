@@ -37,7 +37,6 @@ async function createUser(userName, email, passWord, admin){
     })
   })
 
-  console.log(hashedPassword)
 
    database.UserModel.find({'username': userName},'username hashedPassword',
     function (err, content) {
@@ -78,7 +77,7 @@ function isAdmin(userName){
 }
 
 
-function isUserExisting(userName){
+async function isUserExisting(userName){
   return database.UserModel.find({username: userName}, "id")
   .then(function (content, err){
     return content != 0
