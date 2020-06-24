@@ -30,11 +30,12 @@ function loggedIn(token){
   }
 }
 
-function decodeLoginToken(token){
-   return jwt.decode(token, {complete: true});
+function getUserName(token){
+    let decodedToken = jwt.decode(token, {complete: true})
+    return decodedToken.payload.userName
 }
 
 
 exports.loggedIn = loggedIn
 exports.createLoginToken = createLoginToken
-exports.decodeLoginToken = decodeLoginToken
+exports.getUserName = getUserName

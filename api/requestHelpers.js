@@ -23,6 +23,13 @@ function checkValidParameters(requestKeys, params, response){
   return true
 }
 
+function getLogginInUserName(request){
+  let requestToken = request.header("Access-Control-Request-Headers")
+  let userName = authentificationService.getUserName(requestToken)
+  return userName
+}
+
 
 exports.checkValidLogin = checkValidLogin
 exports.checkValidParameters = checkValidParameters
+exports.getLogginInUserName = getLogginInUserName

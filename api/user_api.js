@@ -1,7 +1,7 @@
 const user_api = require('express').Router();
 const user_db = require('../database/user')
 const permission_service = require('../permission/authorisationService')
-const checkValidRequest = require('./checkValidRequest')
+const requestHelpers = require('./requestHelpers')
 
 
 user_api.get('/:userId', function(request,response){
@@ -13,11 +13,15 @@ user_api.get('/:userId', function(request,response){
 
 
 user_api.delete('/:userId', function(request,response){
-  checkValidRequest.checkValidLogin()
-  let userId = request.params.userId
-  console.log(userId)
-  response.send("OK")
-  response.end()
+  if (!requestHelpers.checkValidLogin(request,response)){
+    return
+  }
+  else {
+    let userId = request.params.userId
+    console.log(userId)
+    response.send("OK")
+    response.end()
+  }
 })
 
 

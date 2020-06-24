@@ -32,4 +32,3 @@ function isPermissionGrantedForUserChange(messageId, userName){
 
 exports.isPermissionGrantedForMessage = isPermissionGrantedForMessage
 exports.isPermissionGrantedForThread = isPermissionGrantedForThread
-exports.isPermissionGrantedForUserUpdate = isPermissionGrantedForUserUpdate
