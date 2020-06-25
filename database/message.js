@@ -4,6 +4,19 @@ const { v4: uuidv4 } = require('uuid');
 
 
 
+function getMessageCreator(messageId){
+  return database.MessageModel.find_one({id: messageId}, "creator")
+  .then(function (content, err){
+      if (err) return handleError(err)
+
+      console.log(content)
+
+      return content
+    }
+  )
+}
+
+
 function createMessage(creatorUserName, content, threadID){
     var newMessage = new database.MessageModel({
         creator: creatorUserName,
@@ -62,3 +75,4 @@ exports.createMessage = createMessage
 exports.deleteMessage = deleteMessage
 exports.editMessage = editMessage
 exports.isMessageExisting = isMessageExisting
+exports.getMessageCreator = getMessageCreator

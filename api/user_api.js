@@ -9,7 +9,7 @@ user_api.get('/:userId', async function(request,response){
     return
   }  else {
     let userId = request.params.userId
-    if (await isUserExisting(userId){
+    if (await user_db.isUserExisting(userId)){
       console.log(userId)
       response.json({ userId: userId})
       response.end()
@@ -22,7 +22,7 @@ user_api.get('/:userId', async function(request,response){
 })
 
 
-user_api.delete('/:userId', function(request,response){
+user_api.delete('/:userId', async function(request,response){
   if (!requestHelpers.checkValidLogin(request,response)){
     return
   }
@@ -30,7 +30,7 @@ user_api.delete('/:userId', function(request,response){
     return
   }  else {
     let userId = request.params.userId
-    if (await isUserExisting(userId){
+    if (await user_db.isUserExisting(userId)){
       console.log(userId)
       response.json({ userId: userId})
       response.end()

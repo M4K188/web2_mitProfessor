@@ -8,12 +8,7 @@ const requestHelpers = require('./requestHelpers')
 
 
 async function isPermissionGrantedForMessage(messageId, userName){
-  if(!await message_db.isMessageExisting(messageId)){
-      response.status(404).send({ error: 'MessageID not exists' })
-      response.end()
-      return false
-  }
-  else if (!authorisationService.isPermissionGrantedForMessage(messageId, creatorUserName)){
+  if (!authorisationService.isPermissionGrantedForMessage(messageId, creatorUserName)){
       response.status(403).send({ error: 'Permission not granted' })
       response.end()
       return false
@@ -28,6 +23,7 @@ message_api.get('/:messageId', async function(request,response){
       response.status(404).send({ error: 'MessageID not exists' })
       response.end()
   }
+  console.log(message_db.getMessageCreator(messageId))
   response.json({ messageId: messageId})
   response.end()
 })
