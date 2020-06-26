@@ -19,12 +19,15 @@ async function isPermissionGrantedForMessage(messageId, userName){
 
 message_api.get('/:messageId', async function(request,response){
   let messageId = request.params.messageId
+  if (!requestHelpers.checkValidParameters(["messageId"], request.params,response)){
+    return
+  }
   if(!await message_db.isMessageExisting(messageId)){
       response.status(404).send({ error: 'MessageID not exists' })
       response.end()
   }
-  console.log(message_db.getMessageCreator(messageId))
-  response.json({ messageId: messageId})
+  let message =  await message_db.getMessage(messageId)
+  response.json(message)
   response.end()
 })
 

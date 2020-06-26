@@ -4,17 +4,28 @@ const { v4: uuidv4 } = require('uuid');
 
 
 
-function getMessageCreator(messageId){
-  return database.MessageModel.find_one({id: messageId}, "creator")
+async function getMessageCreator(messageId){
+  return database.MessageModel.findOne({id: messageId}, "creator")
   .then(function (content, err){
       if (err) return handleError(err)
-
-      console.log(content)
-
-      return content
+      return content.creator
     }
   )
 }
+
+
+function getMessage(messageId){
+  return database.MessageModel.findOne({id: messageId}, "id creator content")
+  .then(function (content, err){
+    return {
+        content : content.content,
+        id: content.id,
+        creator : content.creator
+    }
+  }
+  )
+}
+
 
 
 function createMessage(creatorUserName, content, threadID){
@@ -76,3 +87,4 @@ exports.deleteMessage = deleteMessage
 exports.editMessage = editMessage
 exports.isMessageExisting = isMessageExisting
 exports.getMessageCreator = getMessageCreator
+exports.getMessage = getMessage

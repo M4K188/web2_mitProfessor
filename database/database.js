@@ -19,7 +19,6 @@ var UserSchema  = new Schema({
   admin: Boolean
   });
 
-var UserModel = mongoose.model('UserModel', UserSchema )
 
 var MessageSchema  = new Schema({
 	creator: String,
@@ -28,7 +27,7 @@ var MessageSchema  = new Schema({
   timestamp: Number
   });
 
-var MessageModel = mongoose.model('MessageModel', MessageSchema )
+
 var ThreadSchema  = new Schema({
 	headline: String,
   messageList: [],
@@ -43,7 +42,7 @@ const handleError = function(err) {
 
 exports.ThreadModel = mongoose.model('ThreadModel', ThreadSchema )
 exports.MessageModel = mongoose.model('MessageModel', MessageSchema )
-exports.UserModel = UserModel
+exports.UserModel = mongoose.model('UserModel', UserSchema )
 exports.ThreadSchema = ThreadSchema
 exports.MessageSchema = MessageSchema
 exports.UserSchema = UserSchema
