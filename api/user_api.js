@@ -45,11 +45,31 @@ user_api.delete('/:userId', async function(request,response){
 
 
 //register
-user_api.put('/', function(request,response){
-  let userId = request.params.userId
-  console.log(userId)
-  response.send("OK")
-  response.end()
+user_api.put('/', async function(request,response){
+  if (!requestHelpers.checkValidLogin(request,response)){
+    return
+  }
+  else if (!requestHelpers.checkValidParameters(["userName", "email", "password"], request.query,response)){
+    return
+  }
+  let loggedInName = requestHelpers.getLogginInUserName(request)
+  if (authorisationService.isPermissionGrantedForUserCreation(loggedInName)){
+    let userName = request.query.userName
+    let email = request.query.email
+    let password = request.query.password
+    let userCreationSuccesful = await createUser(userName, email, password, false)
+    if (userCreationSuccesful){
+      response.send("OK")
+    }
+    else {
+      response.send("User not created")
+    }
+    response.end()
+  }
+  else {
+    response.status(403).send({ error: 'User has not the required permission' })
+    response.end()
+  }
 })
 
 

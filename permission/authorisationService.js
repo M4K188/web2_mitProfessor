@@ -27,6 +27,12 @@ function isPermissionGrantedForUserChange(loggedInName, userName){
 }
 
 
+function isPermissionGrantedForUserCreation(loggedInName){
+  return loggedInName === "admin"
+  }
+
+
 exports.isPermissionGrantedForMessage = isPermissionGrantedForMessage
 exports.isPermissionGrantedForThread = isPermissionGrantedForThread
 exports.isPermissionGrantedForUserChange = isPermissionGrantedForUserChange
+exports.isPermissionGrantedForUserCreation = isPermissionGrantedForUserCreation
